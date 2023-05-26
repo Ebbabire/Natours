@@ -1,0 +1,15 @@
+.sub-heading {
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewX(10deg) skewY(3deg) scale(1.1);
+    text-shadow: 8px 16px 32px rgba($color-black, 0.6);
+  }
+}

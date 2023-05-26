@@ -1,0 +1,37 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 70%; //1rem = 11.2px
+
+  @include respond(big-desktop) {
+    font-size: 81.125%; //1rem = 13px
+  }
+
+  @include respond(tab-land) {
+    font-size: 62.5%; //1rem = 10px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px
+  }
+}
+
+body {
+  box-sizing: border-box;
+
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+section {
+  background-color: rgba($color-gray, 0.1);
+}

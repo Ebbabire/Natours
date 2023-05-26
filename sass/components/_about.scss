@@ -1,0 +1,131 @@
+.about {
+  margin-top: -20vh;
+  padding: 20rem 0 20rem;
+
+  &__heading {
+    // max-width: -moz-fit-content;
+    max-width: max-content;
+    text-align: center;
+    margin: 0 auto 8rem;
+
+    @include respond(phone) {
+      margin: 0 auto 4rem;
+    }
+  }
+
+  &__description {
+    max-width: 100rem;
+    margin: 0 auto;
+    display: flex;
+
+    @include respond(tab-land) {
+      padding-left: 2rem;
+    }
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      padding-left: 0;
+      max-width: 50rem;
+    }
+  }
+
+  .description-box {
+    width: 50%;
+    margin-right: 12rem;
+    margin-top: 2rem;
+
+    @include respond(tab-land) {
+      padding-left: 2rem;
+      margin-right: 6rem;
+    }
+
+    @include respond(tab-port) {
+      margin: 0 auto 10rem;
+      padding: 0 3rem;
+      width: 100%;
+      // text-align: center;
+    }
+
+    a {
+      padding-bottom: 7px;
+      padding: 0.8rem 0.2rem;
+      border-bottom: 2.5px solid $color-primary-dark;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.5);
+        border-radius: 0.5rem;
+        transform: translateY(-2rem);
+      }
+      &:active {
+        transform: translateY(4rem);
+        box-shadow: 0 0.6rem 1.5rem rgba($color-black, 0.4);
+      }
+    }
+  }
+
+  &__image {
+    width: 50%;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .composition {
+      position: relative;
+      height: 50%;
+
+      &__image {
+        width: 55%;
+        position: absolute;
+        box-shadow: 0 1rem 30px rgba($color-black, 0.6);
+        z-index: 2;
+        transition: all.2s;
+        outline-offset: 2rem;
+
+        @include respond(tab-port) {
+          width: 32%;
+          position: relative;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          z-index: 3;
+          box-shadow: 0 2rem 3rem rgba($color-black, 0.8);
+          outline: 1.5rem solid $color-primary-dark;
+          border-radius: 1.5px;
+        }
+
+        &--middle {
+          top: 20%;
+          right: 10%;
+
+          @include respond(tab-port) {
+            top: -2rem;
+            // left: -5%;
+            right: 0;
+            transform: scale(1.2);
+          }
+        }
+
+        &--top {
+          top: 55%;
+          left: 20%;
+
+          @include respond(tab-port) {
+            top: 1rem;
+            left: 0;
+            z-index: 1;
+          }
+        }
+      }
+
+      &:hover img:not(:hover) {
+        transform: scale(0.9);
+      }
+    }
+  }
+}

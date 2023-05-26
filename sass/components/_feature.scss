@@ -1,0 +1,60 @@
+.feature {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../../img/nat-4.jpg);
+  background-position: top;
+  background-size: cover;
+  margin: -10rem 0 0;
+  padding: 20rem 0;
+  transform: skewY(-7deg);
+
+  &__items {
+    max-width: 100rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5rem;
+    transform: skewY(7deg);
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      max-width: 50rem;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    .feature__item {
+      width: 30rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba($color-white, 0.75);
+      padding: 3rem 1rem;
+      border-radius: 5px;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.35);
+      transition: all 0.3s;
+
+      @include respond(tab-port) {
+        width: 100%;
+        padding: 3rem 1.5rem;
+      }
+
+      &--heading {
+        margin-top: 2rem;
+      }
+
+      &:hover {
+        transform: translateY(-1.3rem) scale(1.03);
+      }
+
+      .feather {
+        color: $color-primary-light;
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.stories {
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    opacity: 0.2;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+
+    &__content {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.stories__heading {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin: 3rem auto 10rem;
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto 13rem;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 10rem;
+  padding-left: 9rem;
+  font-size: 1.5rem;
+  transform: skewX(-12deg);
+
+  @include respond(phone) {
+    transform: skewX(0);
+    padding: 3rem 1.5rem;
+  }
+
+  &__image {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50%);
+    transform: translateY(-1rem) translateX(-2rem) skewX(12deg);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @include respond(phone) {
+      transform: translateY(-1rem) translateX(-2rem) skewX(0);
+      float: none;
+      margin: 0 auto;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    transform: translate(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+
+    &--heading {
+      text-transform: uppercase;
+      padding: 0 0 2rem;
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &__btn {
+    width: max-content;
+    margin: 1rem auto 6rem;
+
+    a {
+      padding: 0.8rem 0.2rem;
+      border-bottom: 2.5px solid $color-primary-dark;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: $color-primary-dark;
+      font-size: 1.5rem;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.5);
+        border-radius: 0.5rem;
+        transform: translateY(-2rem);
+      }
+      &:active {
+        transform: translateY(4rem);
+        box-shadow: 0 0.6rem 1.5rem rgba($color-black, 0.4);
+      }
+    }
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}
